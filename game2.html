@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>一起摸貓貓</title>
+	<style>
+		button{
+			height: 280px;
+			width: 280px;
+			font-size: 30px;
+			font-weight: bold;
+			border-radius: 50%;
+			border: solid;
+			background-image: url('buttom1.png');
+			color: white;
+			background-size: cover;
+  			background-position: center;
+		}
+		button:hover{
+			transform: scale(1.1);
+		}
+		button:active{
+			background-image: url('buttom2.png');
+		}
+	</style>
+</head>
+<body style="
+		background: #fdfdfd;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;"
+		>
+		<h1 style="margin-top: 50px;">點一下摸喵喵</h1>
+		<img src="cat1.gif" alt="GIF Image" style="height: 500px; margin-right: 80px;" id="cat">
+		<div>
+			<button id="feed">餵食</button>
+			<button id="drink">喝水</button>
+			<button id="play">陪他玩</button>
+		</div>
+
+
+	<script>
+		img = document.getElementById('cat');
+		feed = document.getElementById('feed');
+		drink = document.getElementById('drink');
+		play = document.getElementById('play');
+		img.addEventListener('click', function(){
+			img.src = "cat2.png"		
+			setTimeout(() => {
+				img.src = "cat1.gif";
+			}, 1500);
+		})
+
+		feed.addEventListener('click', function(){
+
+			setTimeout(() => {
+				img.src = "cat1.gif";
+			}, 2500);
+		})
+
+		drink.addEventListener('click', function(){
+		
+			setTimeout(() => {
+				img.src = "cat1.gif";
+			}, 2500);
+		})
+		
+		play.addEventListener('click', function(){
+			
+			setTimeout(() => {
+				img.src = "cat1.gif";
+			}, 3000);
+		})
+	</script>
+</body>
+</html>
