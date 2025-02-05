@@ -5,24 +5,50 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>一起摸貓貓</title>
 	<style>
-		/* button{
-			height: 280px;
-			width: 280px;
-			font-size: 30px;
+		.btn{
+			height: 110px;
+			width: 110px;
+			margin: 10px;
+			font-size: 25px;
 			font-weight: bold;
 			border-radius: 50%;
 			border: solid;
-			background-image: url('buttom1.png');
+			background-image: url('button1.png');
 			color: white;
 			background-size: cover;
   			background-position: center;
 		}
-		button:hover{
+		.btn:hover{
 			transform: scale(1.1);
 		}
-		button:active{
-			background-image: url('buttom2.png');
-		} */
+		.btn:active{
+			background-image: url('button2.png');
+		}
+		#submit{
+			height: 40px;
+			border-radius: 5px;
+			font-size: 20px;
+			color: white;
+			border: solid 5px #FFD3D1  ;
+			background-color: #FFD3D1  ;
+		}
+		#submit:active{
+			background-color: #FFD889  ;
+			border-color: #FFD889  ;
+		}
+		input{
+			margin: 30px 10px ;
+			height: 50px;
+			font-size: 25px;
+			color: white;
+			border-radius: 10px;
+			border: solid 5px #FFD3D1;
+			background-color: #FFD3D1  ;
+		}
+		input::placeholder{
+			color: white;
+			margin-left: 15px;
+		}
 	</style>
 </head>
 <body style="
@@ -32,20 +58,31 @@
 		align-items: center;
 		flex-direction: column;"
 		>
-		<h1 style="margin-top: 50px;">點一下摸喵喵</h1>
-		<img src="cat1.gif" alt="GIF Image" style="height: 500px; margin-right: 80px;" id="cat">
-		<!-- <div>
-			<button id="feed">餵食</button>
-			<button id="drink">喝水</button>
-			<button id="play">陪他玩</button>
+		<!-- <div id="content">
+			<input type="text" placeholder="幫貓咪取個名字：" id="name">
+			<button type="submit" id="submit">確認</button>
 		</div> -->
+		<h1 style="margin-top: 50px;">一起摸喵喵</h1>
+		<img src="cat1.gif" alt="GIF Image" style="height: 500px; margin-right: 80px;" id="cat">
+		<div>
+			<button class="btn" id="feed">餵食</button>
+			<button class="btn" id="drink">喝水</button>
+			<button class="btn" id="play">陪他玩</button>
+		</div>
 
 
 	<script>
+		// let name = window.prompt('幫貓咪取個名字：');
+		// document.getElementById('name').innerHTML = '點一下摸'+`${name}`;
 		img = document.getElementById('cat');
 		feed = document.getElementById('feed');
 		drink = document.getElementById('drink');
 		play = document.getElementById('play');
+		submit = document.getElementById('submit');
+		submit.addEventListener('click', function(){
+			let name = document.getElementById('name').value;
+			document.getElementById('content').innerHTML = `<h1 style="margin-top: 50px">點一下摸${name}</h1>`
+		})
 		img.addEventListener('click', function(){
 			img.src = "cat2.png"		
 			setTimeout(() => {
@@ -54,21 +91,21 @@
 		})
 
 		feed.addEventListener('click', function(){
-
+			img.src = "eating.gif"
 			setTimeout(() => {
 				img.src = "cat1.gif";
-			}, 2500);
+			}, 3000);
 		})
 
 		drink.addEventListener('click', function(){
-		
+			img.src = "drink.gif"
 			setTimeout(() => {
 				img.src = "cat1.gif";
-			}, 2500);
+			}, 2800);
 		})
 		
 		play.addEventListener('click', function(){
-			
+			img.src = "incompleted.png"
 			setTimeout(() => {
 				img.src = "cat1.gif";
 			}, 3000);
