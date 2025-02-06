@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>一起摸貓貓</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        button{
+            width: 165px;
+            height: 125px;
+            min-height: 80px;
+            margin: 10px;
+            font-size: 25px;
+            font-weight: bold;
+            color: white;
+            border-radius: 15px;
+            border: solid 0px;
+            background-color: #69B1EE   ;
+            z-index: 0;
+        }
+        #yes:hover::before{
+            content: "";
+            position: absolute;
+            background-image: url('lefthand.png');
+            top: -15px; left: -5px;
+            width: 150px; height: 90px ;
+            background-size: 110%;
+            background-position: top;
+            z-index: 1;
+        }
+        #yes:hover::after{
+            content: "";
+            position: absolute;
+            background-image: url('cat3.png');
+            bottom: 125px; left: -23px;
+            width: 200px; height: 200px ; 
+            background-size: 200%;
+            background-position: bottom;
+            z-index: -1;
+        }
+        #no:hover::before{
+            content: "";
+            position: absolute;
+            background-image: url('righthand.png');
+            top: -15px; right: -5px; 
+            width: 150px; height: 90px ;
+            background-size: 110%;
+            background-position: top;
+            z-index: 0;
+        }
+        #no:hover::after{
+            content: "";
+            position: absolute;
+            background-image: url('cat3.png');
+            bottom: 125px; right: -5px;
+            width: 200px; height: 200px ;
+            background-size: 200%;
+            background-position: bottom;
+            z-index: -1; 
+        }
+        button:hover{
+            background-color: #69E0EE  ;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <button class="btn" id="yes">我要養貓咪</button>
+    <button class="btn" id="no">我不要養貓咪</button>
+    <script>
+        yes = document.getElementById('yes');
+        no = document.getElementById('no');
+        let chooseNo;
+        yes.addEventListener('click', function(){
+            window.location.href = "game2.html";
+        })
+        
+        no.addEventListener('click', function(){
+            window.location.href = "bye.html";
+        })
+    
+        
+    </script>
+</body>
+</html>
